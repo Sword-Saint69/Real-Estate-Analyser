@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/c54ad325ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header class="bg-neutral-700 text-white w-full">
+      <div class="w-11/12 flex justify-between m-auto py-4 sm:w-[680px]">
+        <a href="/">
+          <h1 class="text-lg font-semibold sm:text-xl">
+            Rental Property Analyzer
+          </h1>
+        </a>
+        <nav class="flex items-center">
+          <a href="/" class="mr-2 hidden">Add Property</a>
+          <a href="/profile.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div
+      id="edit-modal"
+      class="fixed left-0 top-0 z-50 h-screen w-full bg-black bg-opacity-75 hidden"
+    >
+      <div
+        id="edit-modal-form"
+        class="bg-gradient-to-b from-yellow-100 to-purple-400 p-1 w-11/12 my-64 mx-auto rounded-md sm:w-[680px]"
+      >
+        <form
+          id="modal-form"
+          class="flex flex-col bg-neutral-800 w-full m-auto p-3 rounded-lg"
+        >
+          <h2 class="text-white font-semibold text-lg my-2">Edit Property</h2>
+          <input
+            type="text"
+            name="name"
+            placeholder="property nickname"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-neutral-700 rounded-t-md"
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="address"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="number"
+            name="purchase_price"
+            placeholder="purchase price"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="text"
+            name="down_payment"
+            placeholder="loan down payment"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="number"
+            name="loan_length"
+            placeholder="loan length"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="number"
+            name="interest_rate"
+            placeholder="interest rate"
+            step="0.01"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="number"
+            name="rental_income"
+            placeholder="rental income"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+            required
+          />
+          <input
+            type="number"
+            name="expenses"
+            placeholder="expenses"
+            class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 rounded-b-md border-neutral-700"
+            required
+          />
+          <button
+            type="submit"
+            id="edit-form-button"
+            class="bg-purple-400 w-fit m-2 px-6 py-1 text-white font-semibold rounded-xl"
+          >
+            Save Changes
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      class="-z-10 w-11/12 bg-gradient-to-b from-yellow-100 to-purple-400 m-auto p-1 my-4 rounded-lg sm:w-[680px]"
+    >
+      <div
+        id="property-list"
+        class="flex flex-col bg-neutral-800 w-full m-auto p-3 rounded-lg"
+      >
+        <div class="animate-spin m-auto w-fit">
+          <i class="fa-solid fa-spinner text-white"></i>
+        </div>
+        <!-- add server sent data here upon initial load, DOM manipulation after -->
+      </div>
+    </div>
+    <div class="w-11/12 flex flex-row-reverse m-auto sm:w-[680px]">
+      <a href="/">
+        <button
+          id="add-property-button"
+          class="bg-purple-400 w-fit px-6 py-1 text-white font-semibold rounded-xl"
+        >
+          Add New Property
+        </button>
+      </a>
+    </div>
+
+    <footer class="text-neutral-400 text-sm flex flex-col items-center">
+      <hr class="color w-10/12 my-3 sm:w-[600px]" />
+      <p>
+        This project is open source. Feel free to open issues, PRs and
+        contribute on
+        <a
+          href="https://github.com/ranegray/vanilla-real-estate-analyzer"
+          class="text-purple-400"
+          ><i class="fa-brands fa-github"></i> Github</a
+        >!
+      </p>
+    </footer>
+
+    <script src="dashboard.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>

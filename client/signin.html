@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin</title>
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/c54ad325ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header class="bg-neutral-700 text-white w-full">
+      <div class="w-11/12 flex justify-between m-auto py-4 sm:w-[680px]">
+        <a href="/">
+          <h1 class="text-xl font-semibold">Rental Property Analyzer</h1>
+        </a>
+        <nav class="flex"></nav>
+      </div>
+    </header>
+    <div
+      class="-z-10 w-11/12 bg-gradient-to-b from-yellow-100 to-purple-400 m-auto p-1 my-4 rounded-lg sm:w-[680px]"
+    >
+      <form
+        id="signin-form"
+        class="flex flex-col items-center bg-neutral-800 w-full m-auto p-3 rounded-lg"
+      >
+        <h2 class="text-white font-semibold text-lg my-2">Login</h2>
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-neutral-700 rounded-t-md"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <button
+          type="submit"
+          id="signin-form-button"
+          class="bg-purple-400 w-fit m-2 px-6 py-1 text-white font-semibold rounded-xl"
+        >
+          <span id="login-text">Login</span>
+          <span>
+            <div id="loader" class="animate-spin m-auto w-fit hidden">
+              <i class="fa-solid fa-spinner text-white"></i></div
+          ></span>
+        </button>
+        <div class="flex justify-center text-sm text-neutral-400">
+          <a href="/register.html">
+            <h3>Don't have an account yet?</h3>
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <footer class="text-neutral-400 text-sm flex flex-col items-center">
+      <hr class="color w-10/12 my-3 sm:w-[600px]" />
+      <p>
+        This project is open source. Feel free to open issues, PRs and
+        contribute on
+        <a
+          href="https://github.com/ranegray/vanilla-real-estate-analyzer"
+          class="text-purple-400"
+          ><i class="fa-brands fa-github"></i> Github</a
+        >!
+      </p>
+    </footer>
+
+    <script src="signin.js" defer></script>
+  </body>
+</html>

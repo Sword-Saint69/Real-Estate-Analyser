@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/c54ad325ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header class="bg-neutral-700 text-white w-full">
+      <div class="w-11/12 flex justify-between m-auto py-4 sm:w-[680px]">
+        <a href="/">
+          <h1 class="text-lg font-semibold sm:text-xl">
+            Rental Property Analyzer
+          </h1>
+        </a>
+        <nav class="flex"></nav>
+      </div>
+    </header>
+    <div
+      class="-z-10 w-11/12 bg-gradient-to-b from-yellow-100 to-purple-400 m-auto p-1 my-4 rounded-lg sm:w-[680px]"
+    >
+      <div
+        id="property-list"
+        class="flex flex-col items-center bg-neutral-800 w-full m-auto p-3 rounded-lg"
+      >
+        <h2 class="text-white font-semibold text-center text-xl my-2">
+          Welcome to your profile!
+        </h2>
+        <div class="my-2">
+          <button
+            id="logout"
+            class="bg-purple-400 w-fit px-6 py-1 text-white font-semibold rounded-xl"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-neutral-400 text-sm flex flex-col items-center">
+      <hr class="color w-10/12 my-3 sm:w-[600px]" />
+      <p>
+        This project is open source. Feel free to open issues, PRs and
+        contribute on
+        <a
+          href="https://github.com/ranegray/vanilla-real-estate-analyzer"
+          class="text-purple-400"
+          ><i class="fa-brands fa-github"></i> Github</a
+        >!
+      </p>
+    </footer>
+
+    <script src="profile.js" defer></script>
+  </body>
+</html>

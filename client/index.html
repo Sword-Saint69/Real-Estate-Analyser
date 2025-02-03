@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Property Analyzer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/c54ad325ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header class="bg-neutral-700 text-white w-full">
+      <div class="w-11/12 flex justify-between m-auto py-4 sm:w-[680px]">
+        <h1 class="text-lg font-semibold sm:text-xl">
+          Rental Property Analyzer
+        </h1>
+        <nav class="flex items-center">
+          <a id="dashboard" href="/dashboard.html" class="mr-2 hidden"
+            >Dashboard</a
+          >
+          <a id="login" href="/signin.html">Login</a>
+          <a id="profile" href="/profile.html" class="hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div
+      class="-z-10 w-11/12 bg-gradient-to-b from-yellow-100 to-purple-400 m-auto p-1 my-4 rounded-lg sm:w-[680px]"
+    >
+      <form
+        id="property-form"
+        class="flex flex-col bg-neutral-800 w-full m-auto p-3 rounded-lg"
+      >
+        <div class="flex">
+          <h2 class="text-white font-semibold text-lg my-2">Property Form</h2>
+          <p class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+            <button
+              data-popover-target="popover-description"
+              data-popover-placement="bottom-end"
+              type="button"
+            >
+              <svg
+                class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </p>
+          <div
+            data-popover
+            id="popover-description"
+            role="tooltip"
+            class="absolute z-10 invisible inline-block text-sm text-neutral-500 transition-opacity duration-300 bg-neutral border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-neutral-800 dark:border-neutral-600 dark:text-neutral-400"
+          >
+            <div class="p-3 space-y-2">
+              <h3 class="font-semibold text-neutral-900 dark:text-white">
+                Carefully, consider your expenses
+              </h3>
+              <p>
+                Consider common costs such as property taxes, insurance,
+                management fees, maintenance, utilities, vacancy, HOA fees,
+                capital expenditures, and legal or accounting fees. Review your
+                specific property and adjust calculations accordingly.
+              </p>
+              <a
+                href="/help.html"
+                class="flex items-center font-medium text-purple-400 hover:text-purple-600"
+                >Read more
+                <svg
+                  class="w-4 h-4 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  ></path></svg
+              ></a>
+            </div>
+            <div data-popper-arrow></div>
+          </div>
+        </div>
+        <input
+          type="text"
+          name="name"
+          placeholder="property nickname"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-neutral-700 rounded-t-md"
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="address"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="number"
+          name="purchase_price"
+          placeholder="purchase price"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="text"
+          name="down_payment"
+          placeholder="loan down payment"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="number"
+          name="loan_length"
+          placeholder="loan length"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="number"
+          name="interest_rate"
+          placeholder="interest rate"
+          step="0.01"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="number"
+          name="rental_income"
+          placeholder="rental income"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 border-neutral-700"
+          required
+        />
+        <input
+          type="number"
+          name="expenses"
+          placeholder="expenses"
+          class="bg-neutral-800 text-white pl-2 py-2 border-2 border-t-0 rounded-b-md border-neutral-700"
+          required
+        />
+        <button
+          type="submit"
+          id="property-form-button"
+          disabled
+          class="bg-purple-400 w-fit m-2 px-6 py-1 text-white font-semibold rounded-xl disabled:bg-neutral-500 disabled:text-neutral-300"
+        >
+          Please log in
+        </button>
+      </form>
+    </div>
+    <footer class="text-neutral-400 text-sm flex flex-col items-center">
+      <hr class="color w-10/12 my-3 sm:w-[600px]" />
+      <p>
+        This project is open source. Feel free to open issues, PRs and
+        contribute on
+        <a
+          href="https://github.com/ranegray/vanilla-real-estate-analyzer"
+          class="text-purple-400"
+          ><i class="fa-brands fa-github"></i> Github</a
+        >!
+      </p>
+    </footer>
+
+    <script src="index.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>

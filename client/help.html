@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help</title>
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/c54ad325ac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header class="bg-neutral-700 text-white w-full">
+      <div class="w-11/12 flex justify-between m-auto py-4 sm:w-[680px]">
+        <a href="/">
+          <h1 class="text-lg font-semibold sm:text-xl">
+            Rental Property Analyzer
+          </h1>
+        </a>
+        <nav class="flex items-center">
+          <a id="dashboard" href="/dashboard.html" class="mr-2 hidden"
+            >Dashboard</a
+          >
+          <a id="login" href="/signin.html">Login</a>
+          <a id="profile" href="/profile.html" class="hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main
+      class="-z-10 w-11/12 bg-gradient-to-b from-yellow-100 to-purple-400 m-auto p-1 my-4 rounded-lg sm:w-[680px]"
+    >
+      <article
+        class="flex flex-col bg-neutral-800 text-white w-full m-auto p-3 rounded-lg"
+      >
+        <h1 class="text-white font-semibold text-lg my-2">
+          Filling out the property form:
+        </h1>
+        <div class="ml-2 text-neutral-400">
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Property Nickname
+          </h2>
+          <p class="ml-2">
+            Give your property a unique nickname for easy reference.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">Address</h2>
+          <p class="ml-2">
+            Enter the full address of the rental property, including street,
+            city, state, and zip code.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Purchase Price
+          </h2>
+          <p class="ml-2">
+            Enter the total purchase price of the property, including closing
+            costs and fees.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Loan Down Payment
+          </h2>
+          <p class="ml-2">
+            Enter the amount of money you plan to put down as a down payment on
+            the property loan.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Loan Length
+          </h2>
+          <p class="ml-2">
+            Enter the length of the loan term in years. Most loans have a term
+            of 15 or 30 years.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Interest Rate
+          </h2>
+          <p class="ml-2">
+            Enter the annual interest rate for the property loan as a decimal
+            (e.g., 4.5% as 4.5, not 0.045).
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">
+            Rental Income
+          </h2>
+          <p class="ml-2">
+            Enter the total monthly rental income you expect to receive from the
+            property.
+          </p>
+          <h2 class="text-neutral-200 font-semibold text-md my-2">Expenses</h2>
+          <p class="ml-2">
+            Enter the total monthly expenses for the property, including
+            property taxes, insurance, management fees, maintenance, utilities,
+            vacancy, HOA fees, capital expenditures, and legal or accounting
+            fees. Review your specific property and adjust calculations
+            accordingly.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="text-neutral-400 text-sm flex flex-col items-center">
+      <hr class="color w-10/12 my-3 sm:w-[600px]" />
+      <p>
+        This project is open source. Feel free to open issues, PRs and
+        contribute on
+        <a
+          href="https://github.com/ranegray/vanilla-real-estate-analyzer"
+          class="text-purple-400"
+          ><i class="fa-brands fa-github"></i> Github</a
+        >!
+      </p>
+    </footer>
+
+    <script src="help.js" defer></script>
+  </body>
+</html>
